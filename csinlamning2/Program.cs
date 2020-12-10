@@ -1,8 +1,4 @@
 ﻿using System;
-using System.ComponentModel;
-using System.Linq.Expressions;
-using System.Security.Cryptography.X509Certificates;
-using System.Threading;
 
 
 
@@ -13,23 +9,19 @@ using System.Threading;
 // Det finns ett hjärta nära hjälten som hen kan plocka upp. Då försvinner hjärtat
 // Hjälten har ett int fält, alla hjärtan som hen plockat upp som ökar när hjärtat plockas upp
 //          *Det finns mer än ett hjärta att plocka upp
-// Det finns en massa hjärtan som dyker upp slumpmässigt via Random klassen
+//          * Det finns en massa hjärtan som dyker upp slumpmässigt via Random klassen
 
 namespace Inlamningsuppgift2
 
 {
     public class Program
     {
+
         public static void Main(string[] args)
         {
 
             Console.SetBufferSize(125, 150);
 
-
-
-
-
-            /*
             Random random_fabrik = new Random();
             int slumpat_tal = random_fabrik.Next();
             int noll_till_nio = slumpat_tal % 10;
@@ -39,38 +31,43 @@ namespace Inlamningsuppgift2
             {
                 Console.SetCursorPosition(position_x, 3);
                 if (stjärna_eller_prick)
-                    Console.Write("*");
+                    Console.Write("* * * *");
                 else
-                    Console.Write("*");
+                    Console.Write("* * *");
             }
 
             int position_y = slumpat_tal % 21;
             {
                 Console.SetCursorPosition(position_y, 3);
                 if (stjärna_eller_prick)
-                    Console.Write("*");
+                    Console.Write("* * *");
                 else
-                    Console.Write("*");
+                    Console.Write("* *");
             }
 
-            */
 
-            //Hjärtspridare
-            string[] hjärtspridare = { ("* * * * * *") };
+
+            //Hjärtspridare alternativ 2 (sprider hjärtan random på skärmen)
+            /*
+            string[] hjärtspridare = { ("*") };
             Random hjärtisar = new Random();
             int överrasknings_stjärnor = hjärtisar.Next();
-
+            Console.SetCursorPosition(position_x, position_y);
             Console.Write("*");
+            */
 
-
-            //Hjärträknare
-            string[] hjärträknare = { "" };
-            Console.WriteLine("Hjärtan");
+            //Hjärträknare (ska vara längst upp till vänster)
+            /* 
+            int hjärta_x = 0;
+            int hjärta_y = 0;
+            string[] hjärträknare = { "*" };
+            Console.SetCursorPosition(hjärta_x, hjärta_y);
+            Console.WriteLine("*");
             for (int i = 0; i < hjärträknare.Length; i++)
             {
                 Console.WriteLine(hjärträknare[i]);
             }
-
+            */
 
             // Hjältens startposition
             int hjälte_x = 10;
@@ -79,14 +76,16 @@ namespace Inlamningsuppgift2
             Console.SetCursorPosition(hjälte_x, hjälte_y);
             Console.Write('A');
 
+            /*
+            while (true)
+            */
+
+
 
             while (true)
-
-
-
-
-
             {
+
+
 
 
                 // Läser in hjältens nya position
@@ -95,24 +94,27 @@ namespace Inlamningsuppgift2
                 int position_hjälte_y = Console.CursorTop;
 
 
-                /*
-                var Hjälte = (position_hjälte_x, position_hjälte_y);
-                var KrockadeStjärnor = (position_x, position_y);
-                var KrockeliKrock = KrockadeStjärnor;
-                bool Starcount = Console.SetCursorPosition(Hjälte+KrockadeStjärnor);
-
+                // HANN INTE KLART MED DET HÄR!! 
                 
-                if (Hjälte++)
+                int Hjälte_x = (position_hjälte_x);
+                int Hjälte_y = (position_hjälte_y);
+                int KrockadeStjärnor_x = (position_x);
+                int KrockadeStjärnor_y = (position_y);
+               
+                bool Starcount = position_hjälte_x, position_hjälte_y, position_x, position_y
+
+
+
+                if (Hjälte_x++) 
                 {
-                    KrockadeStjärnor => Starcount;
+                    position_x => Starcount
                 }
 
-               
-                Random random_fabrik = new Random();
-                int slumpat_tal = random_fabrik.Next();
-                int noll_till_nio = slumpat_tal % 10;
-                bool stjärna_eller_prick = noll_till_nio > 3;
-                */
+                if (Hjälte_y++)
+                {
+                    position_y => Starcount
+                }
+                
 
 
 
@@ -122,6 +124,8 @@ namespace Inlamningsuppgift2
                 if (key.Key == ConsoleKey.LeftArrow)
                 {
                     Console.Clear();
+                    Console.WriteLine("Antal Hjärtan");
+                    Console.WriteLine(Starcount);
                     Console.SetCursorPosition(position_hjälte_x - 2, position_hjälte_y);
                     Console.Write('A');
 
@@ -130,15 +134,18 @@ namespace Inlamningsuppgift2
                 if (key.Key == ConsoleKey.RightArrow)
                 {
                     Console.Clear();
+                    Console.WriteLine("Antal Hjärtan");
+                    Console.WriteLine(Starcount);
                     Console.SetCursorPosition(position_hjälte_x + 1, position_hjälte_y);
                     Console.Write('A');
-
 
                 }
 
                 if (key.Key == ConsoleKey.UpArrow)
                 {
                     Console.Clear();
+                    Console.WriteLine("Antal Hjärtan");
+                    Console.WriteLine(Starcount);
                     Console.SetCursorPosition(position_hjälte_x - 1, position_hjälte_y - 1);
                     Console.Write('A');
 
@@ -148,11 +155,14 @@ namespace Inlamningsuppgift2
                 if (key.Key == ConsoleKey.DownArrow)
                 {
                     Console.Clear();
+                    Console.WriteLine("Antal Hjärtan");
+                    Console.WriteLine(Starcount);
                     Console.SetCursorPosition(position_hjälte_x - 1, position_hjälte_y + 1);
                     Console.Write('A');
 
-
                 }
+
+
 
 
                 try
