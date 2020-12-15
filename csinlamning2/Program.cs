@@ -80,7 +80,12 @@ namespace Inlamningsuppgift2
             while (true)
             */
 
+            int Starcount = 0;
 
+            if (hjälte_x == position_x && hjälte_y == position_y)
+            {
+                Starcount++;
+            }
 
             while (true)
             {
@@ -98,25 +103,6 @@ namespace Inlamningsuppgift2
                 
                 int Hjälte_x = (position_hjälte_x);
                 int Hjälte_y = (position_hjälte_y);
-                int KrockadeStjärnor_x = (position_x);
-                int KrockadeStjärnor_y = (position_y);
-               
-                bool Starcount = position_hjälte_x, position_hjälte_y, position_x, position_y
-
-
-
-                if (Hjälte_x++) 
-                {
-                    position_x => Starcount
-                }
-
-                if (Hjälte_y++)
-                {
-                    position_y => Starcount
-                }
-                
-
-
 
                 Console.SetCursorPosition(position_hjälte_x, position_hjälte_y);
 
@@ -126,6 +112,7 @@ namespace Inlamningsuppgift2
                     Console.Clear();
                     Console.WriteLine("Antal Hjärtan");
                     Console.WriteLine(Starcount);
+                    Console.WriteLine(stjärna_eller_prick);
                     Console.SetCursorPosition(position_hjälte_x - 2, position_hjälte_y);
                     Console.Write('A');
 
@@ -136,6 +123,7 @@ namespace Inlamningsuppgift2
                     Console.Clear();
                     Console.WriteLine("Antal Hjärtan");
                     Console.WriteLine(Starcount);
+                    Console.WriteLine(stjärna_eller_prick);
                     Console.SetCursorPosition(position_hjälte_x + 1, position_hjälte_y);
                     Console.Write('A');
 
@@ -146,6 +134,7 @@ namespace Inlamningsuppgift2
                     Console.Clear();
                     Console.WriteLine("Antal Hjärtan");
                     Console.WriteLine(Starcount);
+                    Console.WriteLine(stjärna_eller_prick);
                     Console.SetCursorPosition(position_hjälte_x - 1, position_hjälte_y - 1);
                     Console.Write('A');
 
@@ -157,6 +146,7 @@ namespace Inlamningsuppgift2
                     Console.Clear();
                     Console.WriteLine("Antal Hjärtan");
                     Console.WriteLine(Starcount);
+                    Console.WriteLine(stjärna_eller_prick);
                     Console.SetCursorPosition(position_hjälte_x - 1, position_hjälte_y + 1);
                     Console.Write('A');
 
